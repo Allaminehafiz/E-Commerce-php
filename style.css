@@ -1,0 +1,336 @@
+/* =======================================================
+   1. Styles Généraux et Structure de Base
+   ======================================================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Couleur de fond légère */
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    padding: 20px 0 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h2 {
+    color: #34495e;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Encapsuleur de contenu pour centrer le contenu sous le header */
+.content-wrapper { 
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 80vh; /* S'assure que le contenu occupe un minimum de hauteur */
+}
+
+/* NOUVELLE STRUCTURE DE L'ENTÊTE */
+.main-header {
+    background-color: #f1f1f1; /* Fond général */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Conteneur de la bannière */
+.banner-top {
+    text-align: center;
+    width: 33%;
+    padding: 10px 0;
+    margin: 0 auto;
+    border-bottom: 2px solid #a0a0a0; /* Ligne de séparation sous la bannière */
+}
+
+.banner-top img {
+    /* Assurez-vous que l'image remplit 100% de son conteneur (.banner-top) */
+    width: 100%; 
+    display: block;
+    height: auto; /* Maintient les proportions */
+}
+
+/* Navigation des liens */
+.main-nav-links {
+    background-color: #FFFFFF; /* Fond de la bande de navigation */
+    border-bottom: 2px solid #555;
+    padding: 5px 0;
+}
+
+.main-nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex; /* Alignement horizontal */
+    justify-content: center; /* Centrer les liens */
+}
+
+.main-nav-links li {
+    padding: 0 15px;
+}
+
+.main-nav-links a {
+    text-decoration: none;
+    color: #cc0000; /* Couleur rouge pour les liens de navigation */
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 0;
+    display: block;
+}
+
+.welcome-msg-li {
+    color: #444;
+    font-size: 1em;
+    padding: 5px 15px;
+    margin-left: 20px;
+    /* Pour aligner le texte "Bienvenue" avec les liens */
+    display: flex;
+    align-items: center; 
+}
+
+/* =======================================================
+   3. Styles des Articles (index.php)
+   ======================================================= */
+.article-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+    justify-content: center;
+}
+
+.article-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 220px; 
+    text-align: center;
+    background-color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.article-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.article-card a {
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+.article-card h3 {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+.article-card .prix {
+    color: #e74c3c; 
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* =======================================================
+   4. Styles des Détails (catalogue.php)
+   ======================================================= */
+.details-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px;
+    padding: 40px 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.image-col {
+    flex-basis: 300px;
+    text-align: center;
+}
+
+.image-col img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.info-col {
+    max-width: 500px;
+    flex-grow: 1;
+}
+
+.info-col .prix {
+    font-size: 1.8em;
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* =======================================================
+   5. Styles des Formulaires (connexion.php, inscription.php, recherche.php, tri.php)
+   ======================================================= */
+.form-container, .search-container, .tri-container {
+    width: 100%;
+    max-width: 450px; 
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: white;
+}
+
+.form-container label, .search-container label, .tri-container label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.form-container input, .search-container input, .tri-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.form-container button, .search-container button, .tri-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2ecc71; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.form-container button:hover, .search-container button:hover, .tri-container button:hover {
+    background-color: #27ae60;
+}
+
+/* =======================================================
+   6. Styles des Tableaux (Panier, Commandes, Détails, Recherche, Tri)
+   ======================================================= */
+.panier-table, .historique-table, .result-table, .detail-table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.panier-table th, .historique-table th, .result-table th, .detail-table th {
+    background-color: #3498db; /* En-tête bleu */
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #2980b9;
+}
+
+.panier-table td, .historique-table td, .result-table td, .detail-table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: left;
+}
+
+.panier-table tr:nth-child(even), .historique-table tr:nth-child(even), .detail-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Styles spécifiques au total */
+.panier-total, .total-summary {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: right;
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 10px;
+    border-top: 2px solid #333;
+}
+
+/* Bouton Valider Commande */
+.validate-button {
+    text-align: center; 
+    margin: 30px auto;
+}
+
+.validate-button a {
+    padding: 12px 25px;
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.validate-button a:hover {
+    background-color: #27ae60;
+    text-decoration: none;
+}
+
+/* Styles pour les messages de statut (commandes.php) */
+.message-statut {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid;
+}
+
+/* --- 5. Styles du Pied de Page (Footer) --- */
+
+.main-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    margin-top: 30px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Aligner les infos à gauche et les liens à droite */
+    align-items: center;
+}
+/* Pas besoin de plus de style, les icônes sont petites grâce au style inline. */

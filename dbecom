@@ -1,0 +1,179 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.3
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le : mar. 09 déc. 2025 à 00:42
+-- Version du serveur : 8.4.7
+-- Version de PHP : 8.3.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `dbecom`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `articles`
+--
+
+DROP TABLE IF EXISTS `articles`;
+CREATE TABLE IF NOT EXISTS `articles` (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `prix` int UNSIGNED NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `articles`
+--
+
+INSERT INTO `articles` (`id`, `nom`, `type`, `prix`, `description`, `photo`) VALUES
+(39, 'Meuble Bas TV/Rangement (62)', 'Meuble', 75000, 'Grand meuble bas idéal pour la télévision et le rangement.', 'images/62.jpg'),
+(3, 'Réfrigérateur (Double Porte)', 'Electroménager', 450000, 'Réfrigérateur spacieux à double porte, technologie No Frost.', '/mini_ecom/images/411.jpg'),
+(4, 'Micro-ondes (20L)', 'Electroménager', 65000, 'Micro-ondes 20 litres, idéal pour les petites cuisines.', 'images/49.jpg'),
+(5, 'Un mixeur (8kg)', 'Electroménager', 18000, 'pour faire le jus avec, faible consommation d\'énergie.', 'images/46.jpg'),
+(6, 'Un robot', 'Electroménager', 10000, 'pour tour la farine avec, faible consommation d\'énergie.', 'images/41.jpg'),
+(7, 'Boulloire', 'Electroménager', 120000, 'Bouillir l\'eau chaude ou fsire du thé avec.', 'images/44.jpg'),
+(8, 'Fire TV Spotlight (Téléviseur 32\")', 'Electronique', 150000, 'Téléviseur intelligent avec accès direct aux applications de streaming.', 'images/31.jpg'),
+(9, 'Smart TV 4K (40\")', 'Electronique', 220000, 'Téléviseur 4K haute définition, compatible Smart TV.', 'images/32.jpg'),
+(10, 'TV LED Full HD (32\")', 'Electronique', 135000, 'Téléviseur LED Full HD, idéal pour la chambre ou la cuisine.', 'images/33.jpg'),
+(11, 'MXQ Android TV Box', 'Electronique', 35000, 'Boîtier Android TV 8.1 pour transformer votre TV en Smart TV.', 'images/34.jpg'),
+(12, 'Adaptateur HDMI Sans Fil', 'Electronique', 15000, 'Petit boîtier récepteur/émetteur pour streaming HDMI sans fil.', 'images/35.jpg'),
+(13, 'Décodeur 4.0 Bluetooth', 'Electronique', 45000, 'Décodeur multimédia avec connectivité Bluetooth 4.0.', 'images/36.jpg'),
+(14, 'Apple TV 4K', 'Electronique', 85000, 'Lecteur multimédia Apple TV 4K avec télécommande Siri.', 'images/37.jpg'),
+(15, 'Fire TV Stick Lite', 'Electronique', 25000, 'Clé de streaming Fire TV Stick avec télécommande vocale Alexa.', 'images/38.jpg'),
+(16, 'Laptop Windows (14\")', 'Electronique', 250000, 'Ordinateur portable polyvalent pour le travail et les études.', 'images/312.jpg'),
+(17, 'Laptop Gaming (15.6\")', 'Electronique', 450000, 'Ordinateur portable de jeu haute performance avec carte graphique dédiée.', 'images/313.jpg'),
+(18, 'Ultrabook Léger', 'Electronique', 320000, 'Ordinateur portable ultra-mince et léger, idéal pour les voyages.', 'images/314.jpg'),
+(19, 'Routeur WIFI Mesh', 'Electronique', 90000, 'Système Wi-Fi Mesh pour une couverture optimale dans toute la maison.', 'images/317.jpg'),
+(20, 'Casque Audio Pro', 'Electronique', 50000, 'Casque audio circum-aural professionnel avec réduction de bruit.', 'images/318.jpg'),
+(21, 'Skateboard Pro', 'Jouet', 35000, 'Skateboard professionnel pour le freestyle et la rue.', 'images/52.jpg'),
+(22, 'Jeu de société Monopoly Edition', 'Jouet', 15000, 'Le jeu de société classique pour toute la famille.', 'images/53.jpg'),
+(23, 'Jeu de Cartes Yann Leroux', 'Jouet', 8000, 'Jeu de cartes éducatif pour enfants.', 'images/54.jpg'),
+(24, 'Jeu PS4 Aventure', 'Jouet', 30000, 'Jeu vidéo pour console PS4, catégorie aventure.', 'images/55.jpg'),
+(25, 'Jeu de Bain Canard', 'Jouet', 5000, 'Ensemble de jouets flottants pour le bain des tout-petits.', 'images/56.jpg'),
+(26, 'Figurine d\'Action LEGO Box', 'Jouet', 25000, 'Grande boîte de construction LEGO avec figurines d\'action.', 'images/57.jpg'),
+(27, 'Jeu de Plateau Stratégie', 'Jouet', 18000, 'Jeu de plateau nécessitant stratégie et réflexion.', 'images/510.jpg'),
+(28, 'Jeu de Cartes Magic', 'Jouet', 12000, 'Jeu de cartes Magic pour les duels.', 'images/511.jpg'),
+(29, 'Jeu Nintendo Switch Smash', 'Jouet', 40000, 'Jeu de combat pour console Nintendo Switch.', 'images/512.jpg'),
+(30, 'Jeu de Cartes UNO', 'Jouet', 6000, 'Le jeu de cartes incontournable pour les soirées en famille.', 'images/513.jpg'),
+(31, 'Jeu PC Assassin\'s Unity', 'Jouet', 28000, 'Jeu vidéo pour PC, catégorie action-aventure.', 'images/514.jpg'),
+(32, 'Soldats Miniatures', 'Jouet', 9000, 'Ensemble de figurines de soldats miniatures pour dioramas.', 'images/515.jpg'),
+(33, 'Kit d\'Artiste Dessin', 'Jouet', 15000, 'Kit complet pour le dessin et l\'esquisse.', 'images/516.jpg'),
+(34, 'Jeu de Rôle Boîte Collector', 'Jouet', 45000, 'Jeu de rôle avec livres et cartes, édition collector.', 'images/517.jpg'),
+(35, 'Livre d\'Éveil (Grand)', 'Jouet', 7000, 'Livre en tissu ou carton pour l\'éveil des bébés.', 'images/518.jpg'),
+(36, 'Jeu de Construction Briques', 'Jouet', 19000, 'Grand ensemble de briques de construction pour enfants.', 'images/519.jpg'),
+(37, 'Jeu de Dames et Échecs (2 en 1)', 'Jouet', 11000, 'Jeu de plateau double (Dames et Échecs).', 'images/520.jpg'),
+(38, 'Armoire de Rangement Haute (61)', 'Meuble', 55000, 'Armoire de rangement verticale avec étagères.', 'images/61.jpg'),
+(40, 'Banc/Meuble d\'Entrée (63)', 'Meuble', 45000, 'Banc avec rangement pour chaussures ou objets d\'entrée.', 'images/63.jpg'),
+(41, 'Petit Buffet 2 Portes (65)', 'Meuble', 38000, 'Petit buffet compact avec deux portes coulissantes.', 'images/65.jpg'),
+(42, 'Coiffeuse avec Miroir (66)', 'Meuble', 62000, 'Coiffeuse blanche avec miroir ovale et tiroir.', 'images/66.jpg'),
+(43, 'Meuble TV Mural Rond (67)', 'Meuble', 95000, 'Meuble TV avec étagères et miroirs muraux ronds.', 'images/67.jpg'),
+(44, 'Cuisine Basse Modulaire (68)', 'Meuble', 150000, 'Élément de cuisine bas modulaire, finition noire.', 'images/68.jpg'),
+(45, 'Canapé d\'Angle (69)', 'Meuble', 250000, 'Grand canapé d\'angle rembourré.', 'images/69.jpg'),
+(46, 'Étagère à Persiennes (610)', 'Meuble', 30000, 'Étagère de rangement avec façades à persiennes blanches.', 'images/610.jpg'),
+(47, 'Meuble Vasque Moderne (611)', 'Meuble', 70000, 'Meuble de salle de bain sous vasque avec miroir.', 'images/611.jpg'),
+(48, 'Petit Meuble TV (612)', 'Meuble', 45000, 'Meuble TV compact avec compartiments ouverts.', 'images/612.jpg'),
+(49, 'Meuble Salon avec Étagères (613)', 'Meuble', 85000, 'Meuble de salon bas avec étagères murales assorties.', 'images/613.jpg'),
+(50, 'Petit Commode Blanche (614)', 'Meuble', 50000, 'Commode blanche simple avec plusieurs tiroirs.', 'images/614.jpg'),
+(51, 'Meuble à Chaussures Haut (615)', 'Meuble', 60000, 'Meuble haut et étroit pour ranger les chaussures.', 'images/615.jpg'),
+(52, 'Étagères Cubiques Roses (616)', 'Meuble', 25000, 'Ensemble d\'étagères cubiques, idéal pour chambre d\'enfant.', 'images/616.jpg'),
+(53, 'Double Vasque Noir (617)', 'Meuble', 120000, 'Meuble double vasque de salle de bain, finition noire mate.', 'images/617.jpg'),
+(54, 'Étagère de Salle de Bain (618)', 'Meuble', 35000, 'Étagère murale moderne pour salle de bain.', 'images/618.jpg'),
+(55, 'Meuble à Chaussures Bois (620)', 'Meuble', 48000, 'Meuble à chaussures en bois avec tiroirs.', 'images/620.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `clients`
+--
+
+DROP TABLE IF EXISTS `clients`;
+CREATE TABLE IF NOT EXISTS `clients` (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prenom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `adresse` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ville` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `passwrd` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `clients`
+--
+
+INSERT INTO `clients` (`id`, `nom`, `prenom`, `tel`, `adresse`, `ville`, `email`, `passwrd`) VALUES
+(1, 'Allamine', 'Hafiz', NULL, '195', 'Ndjamena', 'allaminhafiz68@gmail.com', '$2y$10$iEl2gt7K85xAw43bre7rBOj1Y443KqMRsVCUtiGF7TbMs8R9jgSAG'),
+(5, 'Habib', 'Hassan', NULL, 'djatinie', 'abeche', 'habib123@gmail', '$2y$10$9ePoy2zX4.XUl5KG7nvebe4Xek2/fzw79c1ChIStr0mt7STpE36ea'),
+(4, 'imane', 'alkali', NULL, '123', 'ndjamena', 'imanealkali65@gmail.com', '$2y$10$5zkWGHTAGwAmwuduyZZtNOOtD6pZh2VyvR2f82bcx21kv.KU65Epi');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commandes`
+--
+
+DROP TABLE IF EXISTS `commandes`;
+CREATE TABLE IF NOT EXISTS `commandes` (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_client` int UNSIGNED NOT NULL,
+  `date_commande` date NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_client` (`id_client`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `commandes`
+--
+
+INSERT INTO `commandes` (`id`, `id_client`, `date_commande`) VALUES
+(1, 1, '2025-12-07'),
+(2, 1, '2025-12-08');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ligne_commandes`
+--
+
+DROP TABLE IF EXISTS `ligne_commandes`;
+CREATE TABLE IF NOT EXISTS `ligne_commandes` (
+  `id_commande` int UNSIGNED NOT NULL,
+  `id_article` int UNSIGNED NOT NULL,
+  `quantite` int UNSIGNED NOT NULL,
+  `total` int UNSIGNED NOT NULL,
+  PRIMARY KEY (`id_commande`,`id_article`),
+  KEY `id_article` (`id_article`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `ligne_commandes`
+--
+
+INSERT INTO `ligne_commandes` (`id_commande`, `id_article`, `quantite`, `total`) VALUES
+(1, 1, 1, 350000),
+(1, 2, 4, 60000),
+(2, 1, 2, 700000);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
